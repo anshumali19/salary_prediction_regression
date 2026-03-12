@@ -1,3 +1,5 @@
+#Name : Anshumali Sharma
+
 # Salary Prediction Using Regression
 
 ## Overview
@@ -96,8 +98,8 @@ Rows containing missing values are removed.
 df = df.dropna()
 This ensures the model trains only on valid data.
 
-
-Feature Engineering
+```
+### Feature Engineering
 
 The dataset contains two types of features: numeric and categorical.
 
@@ -127,7 +129,7 @@ Male   → [1,0]
 Female → [0,1]
 
 
-Column Transformer
+### Column Transformer
 
 A ColumnTransformer is used to apply different preprocessing steps to different column types.
 Numeric Features      → StandardScaler
@@ -141,7 +143,7 @@ The algorithm used in this project is Random Forest Regression.
 
 Random Forest is an ensemble learning algorithm that combines multiple decision trees to produce accurate predictions.
 
-Advantages
+## Advantages
 
 Handles nonlinear relationships
 
@@ -151,7 +153,7 @@ Works well with mixed data types
 
 High prediction accuracy
 
-Model Training
+### Model Training
 
 The dataset is split into training and testing sets.
 80% Training Data
@@ -159,7 +161,7 @@ The dataset is split into training and testing sets.
 
 The model learns patterns from the training data and is evaluated using the testing data.
 
-Machine Learning Pipeline
+### Machine Learning Pipeline
 
 A Pipeline is used to combine preprocessing and model training.
 
@@ -168,7 +170,7 @@ Pipeline
    ├── ColumnTransformer (Preprocessing)
    └── RandomForestRegressor (Model)
 
-Advantages:
+## Advantages:
 
 Cleaner architecture
 
@@ -176,7 +178,7 @@ Prevents data leakage
 
 Ensures consistent preprocessing during prediction
 
-Model Evaluation
+### Model Evaluation
 
 Two evaluation metrics are used.
 
@@ -192,16 +194,16 @@ R² Score (Coefficient of Determination)
 
 R² measures how well the model explains variation in salary.
 
-Range:
+## Range:
 0 → poor model
 1 → perfect model
 
-Project result:
+### Project result:
 R² Score = 0.97
 
 This means the model explains 97% of the variation in salary, indicating very strong performance.
 
-Model Saving
+## Model Saving
 
 The trained model is saved using Joblib so that it can be reused without retraining.
 
@@ -209,12 +211,12 @@ joblib.dump(model, "salary_model.pkl")
 
 The saved model is stored inside the models/ folder.
 
-Streamlit Web Application
+### Streamlit Web Application
 
 A web interface is built using Streamlit so users can interact with the model.
 
 The application allows users to enter:
-
+ ```
 Age
 
 Gender
@@ -230,10 +232,10 @@ Country
 Race
 
 Senior Level
-
+```
 After clicking Predict Salary, the app sends the input to the trained model and displays the predicted salary.
 
-Example Prediction
+### Example Prediction
 
 Example Input:
 Age: 30
@@ -248,7 +250,7 @@ Predicted Salary: ₹101000
 The prediction is based on patterns learned from 6684 dataset records.
 
 
-Technologies Used
+### Technologies Used
 
 
 Technology	Purpose
@@ -261,8 +263,9 @@ Streamlit	Web application interface
 Kaggle	Dataset source
 
 
-Project Structure
+### Project Structure
 
+```
 salary_prediction_regression/
 │
 ├── data/
@@ -279,10 +282,11 @@ salary_prediction_regression/
 ├── app.py
 ├── requirements.txt
 └── README.md
+```
 
 
+## How to Run the Project
 
-How to Run the Project
 1. Install dependencies
 pip install -r requirements.txt
 
@@ -298,7 +302,7 @@ Then open the browser at:
 http://localhost:8501
 
 
-Future Improvements
+### Future Improvements
 
 Possible enhancements include:
 
@@ -312,7 +316,7 @@ Using larger datasets
 
 Deploying the application to cloud platforms
 
-Conclusion
+### Conclusion
 
 This project demonstrates how machine learning can be used to predict salaries based on multiple professional and demographic features.
 
